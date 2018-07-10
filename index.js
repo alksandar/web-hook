@@ -10,8 +10,6 @@ app.listen(process.env.PORT || 3000, () => console.log('webhook is listening'));
 // Creates the endpoint for our webhook
 app.post('/webhook', (req, res) => {
 
-    const VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>";
-
     let body = req.body;
 
     console.log("REQUEST BODY: " + JSON.stringify(req.body));
@@ -22,12 +20,12 @@ app.post('/webhook', (req, res) => {
         body.entry.forEach(function(entry) {
 
             // Gets the body of the webhook event
-            let webhook_event = entry //.messaging[0];
-            //console.log(webhook_event);
+            let webhook_event = entry.messaging[0];
+            console.log(webhook_event);
 
             // Get the sender PSID
             let sender_psid = webhook_event.sender.id;
-            // console.log('Sender PSID: ' + sender_psid);
+            console.log('Sender PSID: ' + sender_psid);
 
         });
 
