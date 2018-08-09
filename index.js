@@ -28,7 +28,7 @@ app.post('/webhook', (req, res) => {
             let sender_psid = webhook_event.sender.id;
             console.log('Sender PSID: ' + sender_psid);
 
-            callSendAPI(webhook_event.sender.id, 'You sent a message!');
+            // callSendAPI(webhook_event.sender.id, 'You sent a message!');
 
         });
 
@@ -46,7 +46,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
     // Your verify token. Should be a random string.
-    let VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>"
+    let VERIFY_TOKEN = "JFD39JC39CKJKF34"
 
     // Parse the query params
     let mode = req.query['hub.mode'];
